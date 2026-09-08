@@ -112,6 +112,7 @@ header a {
     width: 135px;
     height: 200px;
     position: relative;
+    z-index: 3;
 }
 
 .container .thumb .thumb-item img {
@@ -120,6 +121,7 @@ header a {
     object-fit: cover;
     border-radius: 10px;
     filter: brightness(80%);
+    z-index: 3;
 }
 
 .container .thumb .content {
@@ -151,4 +153,102 @@ header a {
 .container .arrows button:hover {
     background-color: #eee;
     color: #000;
+}
+
+.container.next .thumb {
+    animation: effectNext 0.5s linear 1 forwards;
+}
+
+@keyframes effectNext {
+    from {
+        transform: translateX(150px);
+    }
+}
+
+.container.back .thumb {
+    animation: effectBack 0.5s linear 1 forwards;
+}
+
+@keyframes effectBack {
+    from {
+        transform: translateX(-150px);
+    }
+}
+
+.container.next .thumb .thumb-item:nth-last-child(1) {
+    animation: effectLast 0.5s linear 1 forwards;
+}
+
+@keyframes  effectLast {
+    from {
+        width: 0;
+        opacity: 0;
+    }    
+}
+
+.container .list .list-item:nth-last-child(1) .content h2,
+.container .list .list-item:nth-last-child(1) .content p,
+.container .list .list-item:nth-last-child(1) .content .buttons {
+    transform: translateY(50px);
+    filter: blur(30px);
+    opacity: 0;
+    animation: showContent 0.5s linear 1 forwards;
+}
+
+@keyframes showContent {
+    to {
+         transform: translateY(0);
+         filter: blur(0);
+         opacity: 1;
+    }
+}
+
+.container .list .list-item:nth-last-child(1) .content h2 {
+    animation-delay: 0.8s;
+}
+
+.container .list .list-item:nth-last-child(1) .content p {
+    animation-delay: 1s;
+}
+
+.container .list .list-item:nth-last-child(1) .content .buttons {
+    animation-delay: 1.2s;
+}
+
+.container.next .list .list-item:nth-last-child(1) img {
+    width: 135px;
+    height: 200px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    border-radius: 10px;
+    animation: showMainImg 0.3s linear 1 forwards;
+}
+
+@keyframes showMainImg {
+    to {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+
+.container.back .list .list-item:nth-child(1) img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    animation: hideMainImg 0.3s linear 1 forwards;
+}
+
+@keyframes hideMainImg {
+    to {
+        bottom: 50px;
+        left: 50%;
+        border-radius: 10px;
+        width: 135px;
+        height: 200px;
+    }
 }
