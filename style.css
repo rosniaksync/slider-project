@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Outfit", sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #eee;
+    font-size: 12px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    width: 80%;
+    height: 50px;
+    margin: auto;
+}
+
+header a {
+    color: #eee;
+    cursor: pointer;
+    margin-right: 40px;
+    font-weight: 300;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    margin-top: -50px;
+    overflow: hidden;
+}
+
+.container .list .list-item {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.container .list .list-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(50%);
+}
+
+.container .list .list-item .content {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    color: #eee;
+    text-shadow: 0 5px 10px #000;
+}
+
+.container .list .list-item .content h2 {
+    font-size: 5em;
+}
+
+.container .list .list-item .content p {
+    font-size: 17px;
+    margin: 13px auto;
+    line-height: 1.3em;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 130px);
+    grid-template-rows: 42px;
+    gap: 5px;
+    margin-top: 15px;
+}
+.buttons button {
+    border: none;
+    background-color: #eee;
+    letter-spacing: 3px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.buttons button:nth-child(2) {
+    background-color: transparent;
+    border: 1px solid #eee;
+    color: #eee;
+}
+
+.buttons button:hover:nth-child(2) {
+    background-color: #eee;
+    color: #000;
+}
+
+.buttons button:hover {
+    background-color: transparent;
+    color: #eee;
+    border: 1px solid #eee;
+}
