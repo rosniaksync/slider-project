@@ -9,5 +9,4 @@ public class  SliderplacesApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SliderplacesApplication.class, args);
 	}
-
 }
