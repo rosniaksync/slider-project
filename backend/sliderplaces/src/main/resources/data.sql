@@ -1,0 +1,7 @@
+INSERT INTO destinos(nome, descricao, imagem) VALUES
+('Bali', 'Ilha da Indonésia conhecida pelas praias, templos, natureza e cultura. É um destino muitoprocurado para relaxar, conhecer paisagens tropicais e ter contato com a cultura local.', 'img1.jpg'),
+('Paris', 'Capital da França e uma das cidades mais famosas do mundo. Destaca-se pela Torre Eiffel, Museu do Louvre, arquitetura, gastronomia e pelo ambiente romântico.', 'img2.jpg'),
+('Roma', 'Capital da Itália, famosa por sua enorme importância histórica. Possui atrações como o Coliseu, o Vaticano, a Fontana di Trevi e diversas construções da época do Império Romano.', 'img3.jpg'),
+('Veneza', 'Cidade italiana construída sobre várias ilhas e conhecida por seus canais e gôndolas. Tem uma arquitetura histórica marcante e uma atmosfera bastante diferente de outras cidades europeias.', 'img4.jpg'),
+('Costa Amalfitana', 'Região litorânea no sul da Itália conhecida pelas cidades construídas nas encostas, como Amalfi e Positano. É famosa pelas paisagens do Mediterrâneo, praias, estradas costeiras e gastronomia.', 'img5.jpg'),
+('Suiça', 'País conhecido pelos Alpes, lagos, cidades organizadas e paisagens naturais. Destinos como Zurique, Genebra, Lucerna e Interlaken são bastante procurados, além das famosas viagens de trempelas montanhas.', 'img6.webp');
