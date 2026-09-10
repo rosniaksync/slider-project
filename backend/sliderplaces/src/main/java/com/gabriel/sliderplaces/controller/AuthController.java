@@ -1,6 +1,8 @@
 package com.gabriel.sliderplaces.controller;
 
 import com.gabriel.sliderplaces.dto.UsuarioDto;
+import com.gabriel.sliderplaces.dto.UsuarioRequestDto;
+import com.gabriel.sliderplaces.model.UsuarioEntity;
 import com.gabriel.sliderplaces.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -21,5 +23,11 @@ public class AuthController {
     public ResponseEntity<UsuarioDto> registrarUsuario(@RequestBody UsuarioDto dto) {
         UsuarioDto usuario = authService.registrar(dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(usuario);
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<String> loginUsuario(@RequestBody UsuarioRequestDto dto) {
+        String token = authService.login(dto);
+        return ResponseEntity.ok(token);
     }
 }
