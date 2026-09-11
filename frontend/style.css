@@ -522,13 +522,14 @@ header a {
 }
 
 .login > button.toggle {
-    margin-top: 20px;
+    margin-top: -27px;
     background: none;
     border: none;
     color: rgba(255, 255, 255, 0.7);
     font-size: 0.85rem;
     cursor: pointer;
     text-decoration: underline;
+    z-index: 2;
 }
 
 .login > button.toggle:hover {
