@@ -6,6 +6,11 @@
     font-family: "Outfit", sans-serif;
 }
 
+html, body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
 body {
     background-color: #000;
     color: #eee;
@@ -15,24 +20,78 @@ body {
 header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     position: relative;
     z-index: 2;
-    width: 80%;
-    height: 50px;
+    width: 88%;
+    height: 70px;
     margin: auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #eee;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.logo svg {
+    width: 22px;
+    height: 22px;
+}
+
+.logo .light {
+    font-weight: 300;
+}
+
+header nav {
+    display: flex;
+    gap: 40px;
 }
 
 header a {
     color: #eee;
     cursor: pointer;
-    margin-right: 40px;
     font-weight: 300;
+    font-size: 13px;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.nav-icons .icon {
+    width: 20px;
+    height: 20px;
+    color: #eee;
+    cursor: pointer;
+}
+
+.logout {
+    background: none;
+    border: 1px solid rgba(238, 238, 238, 0.35);
+    color: #eee;
+    padding: 7px 16px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.logout:hover {
+    background-color: #eee;
+    color: #000;
 }
 
 .container {
     height: 100vh;
     width: 100vw;
-    margin-top: -50px;
+    margin-top: -70px;
     overflow: hidden;
 }
 
@@ -59,6 +118,8 @@ header a {
 
 .container .list .list-item .content h2 {
     font-size: 5em;
+    font-weight: 800;
+    letter-spacing: -1px;
 }
 
 .container .list .list-item .content p {
@@ -67,37 +128,118 @@ header a {
     line-height: 1.3em;
 }
 
-.buttons {
-    display: grid;
-    grid-template-columns: repeat(2, 130px);
-    grid-template-rows: 42px;
-    gap: 5px;
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
     margin-top: 15px;
 }
-.buttons button {
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-primary,
+.btn-secondary {
     border: none;
-    background-color: #eee;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
     letter-spacing: 3px;
-    font-weight: 500;
     text-transform: uppercase;
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-.buttons button:nth-child(2) {
-    background-color: transparent;
-    border: 1px solid #eee;
-    color: #eee;
-}
-
-.buttons button:hover:nth-child(2) {
+.btn-primary {
     background-color: #eee;
     color: #000;
 }
 
-.buttons button:hover {
+.btn-primary:hover {
     background-color: transparent;
     color: #eee;
     border: 1px solid #eee;
+    padding: 13px 27px;
+}
+
+.btn-primary .arrow {
+    letter-spacing: normal;
+    transition: transform 0.2s ease;
+}
+
+.btn-primary:hover .arrow {
+    transform: translateX(3px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid #eee;
+    color: #eee;
+}
+
+.btn-secondary:hover {
+    background-color: #eee;
+    color: #000;
+}
+
+.favorite-wrapper {
+    position: relative;
+    display: inline-flex;
+}
+
+.favorite {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid rgba(238, 238, 238, 0.5);
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
+    color: #eee;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color 0.2s ease, transform 0.15s ease;
+}
+
+.favorite:hover {
+    border-color: #eee;
+}
+
+.favorite:active {
+    transform: scale(0.92);
+}
+
+.favorite.ativo .heart-icon {
+    color: #e8546b;
+}
+
+.tooltip {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-4px);
+    background: rgba(0, 0, 0, 0.85);
+    color: #eee;
+    font-size: 11px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.favorite-wrapper:hover .tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
 }
 
 .container .thumb {
@@ -130,6 +272,34 @@ header a {
     left: 10px;
 }
 
+.thumb-favorite {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(4px);
+    color: #eee;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 4;
+    transition: transform 0.15s ease;
+}
+
+.thumb-favorite:hover {
+    transform: scale(1.1);
+}
+
+.thumb-favorite.ativo .heart-icon {
+    color: #e8546b;
+}
+
 .container .arrows {
     display: flex;
     gap: 10px;
@@ -140,19 +310,29 @@ header a {
 }
 
 .container .arrows button {
-    border: none;
-    border-radius: 10px;
-    padding: 12px 15px;
-    background-color: #eee4;
+    border: 1px solid rgba(238, 238, 238, 0.25);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
     color: #eee;
     cursor: pointer;
-    font-weight: 500;
-    font-size: 1.5em;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.container .arrows button svg {
+    width: 20px;
+    height: 20px;
 }
 
 .container .arrows button:hover {
-    background-color: #eee;
-    color: #000;
+    background-color: rgba(238, 238, 238, 0.15);
+    border-color: #eee;
 }
 
 .container.next .thumb {
@@ -179,16 +359,16 @@ header a {
     animation: effectLast 0.5s linear 1 forwards;
 }
 
-@keyframes  effectLast {
+@keyframes effectLast {
     from {
         width: 0;
         opacity: 0;
-    }    
+    }
 }
 
 .container .list .list-item:nth-last-child(1) .content h2,
 .container .list .list-item:nth-last-child(1) .content p,
-.container .list .list-item:nth-last-child(1) .content .buttons {
+.container .list .list-item:nth-last-child(1) .content .actions {
     transform: translateY(50px);
     filter: blur(30px);
     opacity: 0;
@@ -197,9 +377,9 @@ header a {
 
 @keyframes showContent {
     to {
-         transform: translateY(0);
-         filter: blur(0);
-         opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
     }
 }
 
@@ -211,7 +391,7 @@ header a {
     animation-delay: 1s;
 }
 
-.container .list .list-item:nth-last-child(1) .content .buttons {
+.container .list .list-item:nth-last-child(1) .content .actions {
     animation-delay: 1.2s;
 }
 
@@ -256,11 +436,11 @@ header a {
 .login {
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
                 url('./img/img3.jpg') center/cover no-repeat;
-    font-family: 'Poppins', sans-serif;
 }
 
 .div-login {
@@ -342,8 +522,6 @@ header a {
 }
 
 .login > button.toggle {
-    position: absolute;
-    top: 65.5%;
     margin-top: 20px;
     background: none;
     border: none;
@@ -351,14 +529,12 @@ header a {
     font-size: 0.85rem;
     cursor: pointer;
     text-decoration: underline;
-    z-index: 4;
 }
 
 .login > button.toggle:hover {
     color: #fff;
 }
 
-/* Campo de nome escondido por padrão (modo login) */
 .campo-nome {
     display: none;
 }
@@ -366,4 +542,5 @@ header a {
 .login.modo-cadastro .campo-nome {
     display: flex;
     flex-direction: column;
+    padding-bottom: 15px;
 }

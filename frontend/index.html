@@ -12,181 +12,249 @@
 </head>
 
 <body>
-    <!-- <header>
+    <header>
+        <div class="logo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 20l6-11 4 7 3-5 5 9H3z" />
+            </svg>
+            <span class="logo-text">Slider<span class="light">Places</span></span>
+        </div>
+
         <nav>
             <a href="#">Sobre</a>
             <a href="#">Informações</a>
             <a href="#">Fale Conosco</a>
         </nav>
+
+        <div class="nav-icons">
+            <button class="logout">Sair</button>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="7" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="4" />
+                <path d="M4 20c0-4.4 3.6-7 8-7s8 2.6 8 7" />
+            </svg>
+        </div>
     </header>
 
     <main class="container">
         <div class="list">
-            <div class="list-item">
-                <img src="./img/img1.jpg" alt="">
+            <div class="list-item" data-id="1">
+                <img src="./img/img1.jpg" alt="Bali">
                 <div class="content">
                     <h2>Bali</h2>
                     <p>Ilha da Indonésia conhecida pelas praias, templos, natureza e cultura. <br>
-                        É um destino muitoprocurado para relaxar, conhecer paisagens tropicais <br>
+                        É um destino muito procurado para relaxar, conhecer paisagens tropicais <br>
                         e ter contato com a cultura local.</p>
-                    <div class="buttons">
-                        <button>Saiba Mais</button>
-                        <button>Acessar</button>
+                    <div class="actions">
+                        <div class="buttons">
+                            <button class="btn-primary">Saiba Mais <span class="arrow">→</span></button>
+                            <button class="btn-secondary">Acessar</button>
+                        </div>
+                        <div class="favorite-wrapper">
+                            <button class="favorite"><span class="heart-icon">♡</span></button>
+                            <span class="tooltip">Favoritar destino</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="list-item">
-                <img src="./img/img2.jpg" alt="">
+            <div class="list-item" data-id="2">
+                <img src="./img/img2.jpg" alt="Paris">
                 <div class="content">
                     <h2>Paris</h2>
                     <p>Capital da França e uma das cidades mais famosas do mundo. <br>
                         Destaca-se pela Torre Eiffel, Museu do Louvre, <br>
                         arquitetura, gastronomia e pelo ambiente romântico.</p>
-                    <div class="buttons">
-                        <button>Saiba Mais</button>
-                        <button>Acessar</button>
+                    <div class="actions">
+                        <div class="buttons">
+                            <button class="btn-primary">Saiba Mais <span class="arrow">→</span></button>
+                            <button class="btn-secondary">Acessar</button>
+                        </div>
+                        <div class="favorite-wrapper">
+                            <button class="favorite"><span class="heart-icon">♡</span></button>
+                            <span class="tooltip">Favoritar destino</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="list-item">
-                <img src="./img/img3.jpg" alt="">
+            <div class="list-item" data-id="3">
+                <img src="./img/img3.jpg" alt="Roma">
                 <div class="content">
                     <h2>Roma</h2>
                     <p>Capital da Itália, famosa por sua enorme importância histórica. <br>
                         Possui atrações como o Coliseu, o Vaticano, a Fontana di Trevi <br>
                         e diversas construções da época do Império Romano.</p>
-                    <div class="buttons">
-                        <button>Saiba Mais</button>
-                        <button>Acessar</button>
+                    <div class="actions">
+                        <div class="buttons">
+                            <button class="btn-primary">Saiba Mais <span class="arrow">→</span></button>
+                            <button class="btn-secondary">Acessar</button>
+                        </div>
+                        <div class="favorite-wrapper">
+                            <button class="favorite"><span class="heart-icon">♡</span></button>
+                            <span class="tooltip">Favoritar destino</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="list-item">
-                <img src="./img/img4.jpg" alt="">
+            <div class="list-item" data-id="4">
+                <img src="./img/img4.jpg" alt="Veneza">
                 <div class="content">
                     <h2>Veneza</h2>
                     <p>Cidade italiana construída sobre várias ilhas e conhecida <br>
                         por seus canais e gôndolas. Tem uma arquitetura histórica <br>
-                        marcante e uma atmosfera bastante diferente de outras cidades europeias.
-                    </p>
-                    <div class="buttons">
-                        <button>Saiba Mais</button>
-                        <button>Acessar</button>
+                        marcante e uma atmosfera bastante diferente de outras cidades europeias.</p>
+                    <div class="actions">
+                        <div class="buttons">
+                            <button class="btn-primary">Saiba Mais <span class="arrow">→</span></button>
+                            <button class="btn-secondary">Acessar</button>
+                        </div>
+                        <div class="favorite-wrapper">
+                            <button class="favorite"><span class="heart-icon">♡</span></button>
+                            <span class="tooltip">Favoritar destino</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="list-item">
-                <img src="./img/img5.jpg" alt="">
+            <div class="list-item" data-id="5">
+                <img src="./img/img5.jpg" alt="Costa Amalfitana">
                 <div class="content">
                     <h2>Costa Amalfitana</h2>
                     <p>Região litorânea no sul da Itália conhecida pelas cidades <br>
                         construídas nas encostas, como Amalfi e Positano. É famosa <br>
-                        pelas paisagens do Mediterrâneo, praias, estradas costeiras e gastronomia.
-                    </p>
-                    <div class="buttons">
-                        <button>Saiba Mais</button>
-                        <button>Acessar</button>
+                        pelas paisagens do Mediterrâneo, praias, estradas costeiras e gastronomia.</p>
+                    <div class="actions">
+                        <div class="buttons">
+                            <button class="btn-primary">Saiba Mais <span class="arrow">→</span></button>
+                            <button class="btn-secondary">Acessar</button>
+                        </div>
+                        <div class="favorite-wrapper">
+                            <button class="favorite"><span class="heart-icon">♡</span></button>
+                            <span class="tooltip">Favoritar destino</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="list-item">
-                <img src="./img/img6.webp" alt="">
+            <div class="list-item" data-id="6">
+                <img src="./img/img6.webp" alt="Suíça">
                 <div class="content">
-                    <h2>Suiça</h2>
+                    <h2>Suíça</h2>
                     <p>País conhecido pelos Alpes, lagos, cidades organizadas e paisagens naturais. <br>
                         Destinos como Zurique, Genebra, Lucerna e Interlaken são bastante procurados, <br>
-                        além das famosas viagens de trempelas montanhas.</p>
-                    <div class="buttons">
-                        <button>Saiba Mais</button>
-                        <button>Acessar</button>
+                        além das famosas viagens de trem pelas montanhas.</p>
+                    <div class="actions">
+                        <div class="buttons">
+                            <button class="btn-primary">Saiba Mais <span class="arrow">→</span></button>
+                            <button class="btn-secondary">Acessar</button>
+                        </div>
+                        <div class="favorite-wrapper">
+                            <button class="favorite"><span class="heart-icon">♡</span></button>
+                            <span class="tooltip">Favoritar destino</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="thumb">
-            <div class="thumb-item">
-                <img src="./img/img1.jpg" alt="">
+            <div class="thumb-item" data-id="1">
+                <button class="thumb-favorite"><span class="heart-icon">♡</span></button>
+                <img src="./img/img1.jpg" alt="Bali">
                 <div class="content">
                     <h3>Bali</h3>
                     <p>Visite Bali</p>
                 </div>
             </div>
 
-            <div class="thumb-item">
-                <img src="./img/img2.jpg" alt="">
+            <div class="thumb-item" data-id="2">
+                <button class="thumb-favorite"><span class="heart-icon">♡</span></button>
+                <img src="./img/img2.jpg" alt="Paris">
                 <div class="content">
                     <h3>Paris</h3>
                     <p>Visite Paris</p>
                 </div>
             </div>
 
-            <div class="thumb-item">
-                <img src="./img/img3.jpg" alt="">
+            <div class="thumb-item" data-id="3">
+                <button class="thumb-favorite"><span class="heart-icon">♡</span></button>
+                <img src="./img/img3.jpg" alt="Roma">
                 <div class="content">
                     <h3>Roma</h3>
                     <p>Visite Roma</p>
                 </div>
             </div>
 
-            <div class="thumb-item">
-                <img src="./img/img4.jpg" alt="">
+            <div class="thumb-item" data-id="4">
+                <button class="thumb-favorite"><span class="heart-icon">♡</span></button>
+                <img src="./img/img4.jpg" alt="Veneza">
                 <div class="content">
                     <h3>Veneza</h3>
                     <p>Visite Veneza</p>
                 </div>
             </div>
 
-            <div class="thumb-item">
-                <img src="./img/img5.jpg" alt="">
+            <div class="thumb-item" data-id="5">
+                <button class="thumb-favorite"><span class="heart-icon">♡</span></button>
+                <img src="./img/img5.jpg" alt="Costa Amalfitana">
                 <div class="content">
                     <h3>Costa Amalfitana</h3>
                     <p>Visite Costa Amalfitana</p>
                 </div>
             </div>
 
-            <div class="thumb-item">
-                <img src="./img/img6.webp" alt="">
+            <div class="thumb-item" data-id="6">
+                <button class="thumb-favorite"><span class="heart-icon">♡</span></button>
+                <img src="./img/img6.webp" alt="Suíça">
                 <div class="content">
-                    <h3>Suiça</h3>
-                    <p>Visite Suiça</p>
+                    <h3>Suíça</h3>
+                    <p>Visite Suíça</p>
                 </div>
             </div>
         </div>
 
         <div class="arrows">
-            <button class="back"> < </button>
-            <button class="next"> > </button>
+            <button class="back">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6" />
+                </svg>
+            </button>
+            <button class="next">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6" />
+                </svg>
+            </button>
         </div>
-    </main> -->
+    </main>
 
-<section class="login">
-    <form>
-        <div class="div-login">
-            <h2>Entrar</h2>
-            <p class="subtitle">Acesse sua conta para continuar</p>
+    <section class="login">
+        <form>
+            <div class="div-login">
+                <h2 class="title">Entrar</h2>
+                <p class="subtitle">Acesse sua conta para continuar</p>
 
-            <div class="campo-nome">
-                <label for="name">Nome</label>
-                <input type="text" name="name" id="name" placeholder="Seu nome">
+                <div class="campo-nome">
+                    <label for="name">Nome</label>
+                    <input type="text" name="name" id="name" placeholder="Seu nome">
+                </div>
+
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" placeholder="seu@email.com">
+
+                <label for="password">Senha</label>
+                <input type="password" name="password" id="password" placeholder="••••••••">
+
+                <button type="submit">Enviar</button>
             </div>
+        </form>
+        <button class="toggle">Não tem conta? Cadastre-se</button>
+    </section>
 
-            <label for="email">E-mail</label>
-            <input type="email" name="email" id="email" placeholder="seu@email.com">
-
-            <label for="password">Senha</label>
-            <input type="password" name="password" id="password" placeholder="••••••••">
-
-            <button type="submit">Enviar</button>
-        </div>
-    </form>
-    <button class="toggle">Não tem conta? Cadastre-se</button>
-</section>
     <script src="script.js"></script>
 </body>
 

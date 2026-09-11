@@ -10,7 +10,6 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -23,7 +22,6 @@ public class JwtAuthFilter extends OncePerRequestFilter {
 
     private final TokenProvider tokenProvider;
     private final UsuarioRepository respository;
-
 
     @Override
     protected void doFilterInternal(@NonNull HttpServletRequest request,
